@@ -1,0 +1,510 @@
+/* ===== Full App.css (Deep background + better Distribution section) ===== */
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color:#eaf2ff;
+
+  /* deeper, richer background */
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(37,99,235,0.25), transparent 55%),
+    radial-gradient(900px 500px at 85% 20%, rgba(250,204,21,0.18), transparent 55%),
+    radial-gradient(900px 650px at 55% 110%, rgba(34,197,94,0.12), transparent 60%),
+    linear-gradient(135deg, #081427 0%, #0b1f3a 45%, #07101f 100%);
+  min-height:100vh;
+}
+
+.app{
+  min-height:100vh;
+  padding:22px;
+}
+
+/* ===== Top Bar ===== */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:16px 18px;
+  border-radius:18px;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+}
+
+.title{
+  font-size:20px;
+  font-weight:900;
+  color:#ffffff;
+}
+
+.subtitle{
+  margin-top:4px;
+  font-size:13px;
+  color: rgba(234,242,255,0.75);
+}
+
+.badge{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 12px;
+  border-radius:999px;
+
+  background: rgba(34,197,94,0.12);
+  border: 1px solid rgba(34,197,94,0.22);
+  color: rgba(234,242,255,0.92);
+  font-weight:800;
+  font-size:12px;
+}
+
+.dot{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:#22c55e;
+  box-shadow: 0 0 0 6px rgba(34,197,94,0.18);
+}
+
+/* ===== Layout Grid ===== */
+.grid{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns: 1.05fr 1.15fr 1fr;
+  gap:16px;
+}
+
+@media (max-width:1100px){
+  .grid{ grid-template-columns: 1fr; }
+  .topbar{ position: static; }
+}
+
+/* ===== Cards ===== */
+.card{
+  border-radius:20px;
+  padding:16px;
+  overflow:hidden;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 16px 42px rgba(0,0,0,0.32);
+}
+
+.cardHeader{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.cardTitle{
+  font-size:15px;
+  font-weight:900;
+  color:#ffffff;
+}
+
+.cardHint{
+  margin-top:3px;
+  font-size:12px;
+  color: rgba(234,242,255,0.70);
+}
+
+/* ===== KPI ===== */
+.kpiRow{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:12px;
+  margin: 12px 0 10px;
+}
+
+.kpi{
+  border-radius:16px;
+  padding:12px;
+
+  background: rgba(37,99,235,0.12);
+  border: 1px solid rgba(37,99,235,0.20);
+}
+
+.kpiLabel{
+  font-size:12px;
+  font-weight:800;
+  color: rgba(234,242,255,0.75);
+}
+
+.kpiValue{
+  margin-top:6px;
+  font-size:20px;
+  font-weight:900;
+  color:#ffffff;
+}
+
+/* ===== Strong/Weak ===== */
+.split{
+  margin-top:10px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+}
+
+.pillBox{
+  border-radius:16px;
+  padding:12px;
+  background: rgba(34,197,94,0.12);
+  border: 1px solid rgba(34,197,94,0.22);
+}
+
+.pillBox.warn{
+  background: rgba(250,204,21,0.14);
+  border: 1px solid rgba(250,204,21,0.26);
+}
+
+.pillTitle{
+  font-size:12px;
+  font-weight:900;
+  color: rgba(234,242,255,0.78);
+}
+
+.pillMain{
+  margin-top:6px;
+  font-size:18px;
+  font-weight:900;
+  color:#ffffff;
+}
+
+.pillSub{
+  margin-top:2px;
+  font-size:12px;
+  color: rgba(234,242,255,0.72);
+  font-weight:700;
+}
+
+/* ===== List (Top performers) ===== */
+.sectionTitle{
+  margin-top:14px;
+  font-size:12px;
+  font-weight:900;
+  color: rgba(234,242,255,0.78);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.list{
+  margin-top:10px;
+  display:grid;
+  gap:10px;
+}
+
+.listItem{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px;
+  border-radius:16px;
+
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.avatar{
+  width:38px;
+  height:38px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  color:#0b2545;
+
+  background: linear-gradient(135deg, rgba(96,165,250,0.95), rgba(250,204,21,0.85));
+  border: 1px solid rgba(255,255,255,0.16);
+}
+
+.listText{ flex:1; min-width:0; }
+
+.listMain{
+  font-weight:900;
+  font-size:13px;
+  color:#ffffff;
+}
+
+.listSub{
+  font-size:12px;
+  color: rgba(234,242,255,0.72);
+  font-weight:700;
+  margin-top:2px;
+}
+
+.chip{
+  padding:8px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  color: rgba(234,242,255,0.92);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.muted{ color: rgba(234,242,255,0.68); font-weight:700; }
+.mono{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* ===== Controls ===== */
+.controls{ display:flex; gap:10px; align-items:center; }
+
+.control{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:12px;
+  font-weight:800;
+  color: rgba(234,242,255,0.78);
+}
+
+.control.full{ width:100%; }
+
+.control input, .control select{
+  padding:10px 12px;
+  border-radius:12px;
+  border: 1px solid rgba(255,255,255,0.18);
+  outline:none;
+  background: rgba(0,0,0,0.25);
+  color:#eaf2ff;
+  font-weight:800;
+}
+
+.control input:focus, .control select:focus{
+  border-color: rgba(96,165,250,0.70);
+  box-shadow: 0 0 0 4px rgba(96,165,250,0.18);
+}
+
+/* ===== Subject bars ===== */
+.bars{
+  margin-top:10px;
+  display:grid;
+  gap:10px;
+}
+
+.barRow{
+  display:grid;
+  grid-template-columns: 70px 1fr 60px;
+  gap:10px;
+  align-items:center;
+}
+
+.barLabel{
+  font-weight:900;
+  font-size:12px;
+  color: rgba(234,242,255,0.80);
+}
+
+.barTrack{
+  height:12px;
+  border-radius:999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  overflow:hidden;
+}
+
+.barFill{
+  height:100%;
+  border-radius:999px;
+  background: linear-gradient(90deg, rgba(96,165,250,0.95), rgba(250,204,21,0.85));
+}
+
+.barValue{
+  text-align:right;
+  font-weight:900;
+  font-size:12px;
+  color:#ffffff;
+}
+/* ===== Table ===== */
+.tableWrap{
+  margin-top:12px;
+  overflow:auto;
+  border-radius:16px;
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
+.table{
+  width:100%;
+  border-collapse: collapse;
+  min-width: 420px;
+}
+
+.table thead th{
+  text-align:left;
+  padding:12px;
+  font-size:12px;
+  background: rgba(96,165,250,0.14);
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+  color:#ffffff;
+}
+
+.table tbody td{
+  padding:12px;
+  font-size:12px;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  color: rgba(234,242,255,0.90);
+}
+
+.table tbody tr:hover{
+  background: rgba(250,204,21,0.10);
+}
+
+.tdStrong{ font-weight:900; color:#ffffff; }
+
+/* ===== Divider ===== */
+.divider{
+  height:1px;
+  background: rgba(255,255,255,0.14);
+  margin: 14px 0;
+}
+
+/* ===== Performance Distribution (Improved) ===== */
+.histogram{
+  height: 165px;
+  padding: 14px 14px 10px;
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  align-items: end;
+}
+
+.histCol{
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto auto; /* bar, count, label */
+  gap: 6px;
+  justify-items: center;
+}
+
+.histBar{
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(96,165,250,0.25);
+
+  background: linear-gradient(180deg, rgba(96,165,250,0.85), rgba(250,204,21,0.70));
+  align-self: end;
+
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.histCol:hover .histBar{
+  transform: translateY(-4px);
+  filter: brightness(1.08);
+}
+
+.histCount{
+  font-size: 13px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.histLabel{
+  font-size: 12px;
+  color: rgba(234,242,255,0.85);
+  font-weight: 700;
+}
+
+/* ===== Mini student table ===== */
+.filters{
+  display:grid;
+  gap:10px;
+  margin-top:10px;
+}
+
+.miniTable{
+  margin-top:10px;
+  border-radius:16px;
+  border: 1px solid rgba(255,255,255,0.14);
+  overflow:hidden;
+  background: rgba(255,255,255,0.06);
+}
+
+.miniHead, .miniRow{
+  display:grid;
+  grid-template-columns: 60px 1fr 80px 60px;
+  gap:8px;
+  align-items:center;
+  padding:10px 12px;
+  font-size:12px;
+}
+
+.miniHead{
+  font-weight:900;
+  background: rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+  color:#ffffff;
+}
+
+.miniRow{
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  color: rgba(234,242,255,0.90);
+}
+
+.miniRow:last-child{ border-bottom:none; }
+
+.miniRow:hover{
+  background: rgba(96,165,250,0.10);
+}
+
+/* Grade pill */
+.grade{
+  display:inline-flex;
+  justify-content:center;
+  padding:7px 10px;
+  border-radius:999px;
+  font-weight:900;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color:#ffffff;
+}
+.g-Ap{ background: rgba(34,197,94,0.16); border-color: rgba(34,197,94,0.26); }
+.g-A { background: rgba(34,197,94,0.12); border-color: rgba(34,197,94,0.22); }
+.g-Bp{ background: rgba(96,165,250,0.16); border-color: rgba(96,165,250,0.26); }
+.g-B { background: rgba(96,165,250,0.12); border-color: rgba(96,165,250,0.22); }
+.g-C { background: rgba(250,204,21,0.18); border-color: rgba(250,204,21,0.28); }
+.g-D { background: rgba(250,204,21,0.12); border-color: rgba(250,204,21,0.22); }
+.g-F { background: rgba(239,68,68,0.14); border-color: rgba(239,68,68,0.24); }
+
+/* Ranking styles (if you use that section) */
+.rankList{ margin-top:10px; display:grid; gap:10px; }
+.rankItem{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px;
+  border-radius:16px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+}
+.rankNum{
+  width:44px;
+  height:34px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  font-weight:950;
+  background: rgba(250,204,21,0.18);
+  border: 1px solid rgba(250,204,21,0.26);
+  color:#ffffff;
+}
+.rankText{ flex:1; }
+.rankMain{ font-weight:900; font-size:13px; color:#ffffff; }
+.rankSub{ font-size:12px; color: rgba(234,242,255,0.72); font-weight:700; margin-top:2px; }
+.smallNote{ font-size:12px; }
+
